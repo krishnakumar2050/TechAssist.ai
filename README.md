@@ -5,7 +5,8 @@ Employee IT support assistant with evidence-grounded troubleshooting, conversati
 ## Project layout
 
 - [Local Python project](local-python/README.md) contains the original Python/FastAPI backend and React frontend.
-- `hosted-replit/` is reserved for the latest hosted React/Express source snapshot; export is in progress.
+- [Hosted Replit project](hosted-replit/replit.md) contains the React/Express implementation with metadata filtering, RAG-Fusion and request correlation diagnostics.
+- [Hosted source manifest](hosted-replit/SOURCE_EXPORT_MANIFEST.json) records source commit `234c52e0342c82fdb3b42078e855d8f7cdbb32c2`, checksums and export exclusions.
 - [PowerPoint presentation](submission/TechAssist_Project_Submission.pptx)
 - [Executive brief](submission/TechAssist_Executive_Brief.docx)
 

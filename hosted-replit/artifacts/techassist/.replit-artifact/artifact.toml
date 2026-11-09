@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "TechAssist.ai"
+description = "Enterprise employee IT support with grounded retrieval, contextual troubleshooting, and secure IT handoffs."
+version = "1.0.0"
+id = "artifacts/techassist"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 26121
+
+[services.development]
+run = "pnpm --filter @workspace/techassist run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/techassist", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/techassist/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "26121"
+BASE_PATH = "/"

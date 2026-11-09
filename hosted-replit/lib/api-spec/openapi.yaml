@@ -1,0 +1,317 @@
+openapi: 3.1.0
+info:
+  title: Api
+  version: 1.0.0
+servers:
+  - url: /api
+paths:
+  /healthz:
+    get:
+      operationId: healthCheck
+      responses:
+        "200":
+          description: Healthy
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/HealthStatus" }
+  /support/status:
+    get:
+      operationId: getSupportStatus
+      responses:
+        "200":
+          description: Public readiness without configuration details
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/SupportStatus" }
+  /support/conversations:
+    get:
+      operationId: listConversations
+      parameters:
+        - { name: search, in: query, schema: { type: string } }
+      responses:
+        "200":
+          description: Employee-owned histories
+          content:
+            application/json:
+              schema:
+                type: array
+                items: { $ref: "#/components/schemas/Conversation" }
+    post:
+      operationId: createConversation
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: "#/components/schemas/ConversationInput" }
+      responses:
+        "201":
+          description: Created
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/ConversationDetail" }
+  /support/conversations/{id}:
+    parameters:
+      - { name: id, in: path, required: true, schema: { type: string } }
+    get:
+      operationId: getConversation
+      responses:
+        "200":
+          description: Conversation
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/ConversationDetail" }
+    patch:
+      operationId: updateConversation
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: "#/components/schemas/DeviceContext" }
+      responses:
+        "200":
+          description: Updated
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/ConversationDetail" }
+    delete:
+      operationId: deleteConversation
+      responses:
+        "204": { description: Deleted }
+  /support/conversations/{id}/messages:
+    parameters:
+      - { name: id, in: path, required: true, schema: { type: string } }
+    post:
+      operationId: sendMessage
+      description: "Streaming client uses Accept text/event-stream. Events: progress {stage, correlation}, token {text}, done {...ConversationDetail, correlation}, error {error, correlation}. Correlation contains server requestId and, only after ownership checks, conversationId, userMessageId, assistantMessageId and retrievalId when available. Additive metadata preserves existing consumers. X-Request-ID is a fresh server UUID on every HTTP attempt. No event replay or exactly-once retry guarantee. JSON success clients receive ConversationDetail unchanged."
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: "#/components/schemas/MessageInput" }
+      responses:
+        "200":
+          description: Answer
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/ConversationDetail" }
+  /support/conversations/{id}/outcome:
+    parameters:
+      - { name: id, in: path, required: true, schema: { type: string } }
+    post:
+      operationId: recordOutcome
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: "#/components/schemas/OutcomeInput" }
+      responses:
+        "200":
+          description: Recorded
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/ConversationDetail" }
+  /support/conversations/{id}/handoff:
+    parameters:
+      - { name: id, in: path, required: true, schema: { type: string } }
+    get:
+      operationId: getHandoff
+      responses:
+        "200":
+          description: Copyable summary, not a submitted ticket
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Handoff"
+  /support/admin/status:
+    get:
+      operationId: getAdminStatus
+      responses:
+        "200":
+          description: Administrator-only configuration
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/AdminStatus" }
+  /support/admin/ingest:
+    post:
+      operationId: ingestKnowledge
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: "#/components/schemas/KnowledgeInput" }
+      responses:
+        "200":
+          description: Indexed
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/IngestResult" }
+  /support/admin/validate:
+    post:
+      operationId: validateSupportSource
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: "#/components/schemas/SourceValidationInput" }
+      responses:
+        "200":
+          description: Validation result, including failed or incomplete checks
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/SourceValidation" }
+components:
+  schemas:
+    HealthStatus:
+      type: object
+      required: [status]
+      properties:
+        status: { type: string }
+    SupportStatus:
+      type: object
+      required: [ready, authenticated, admin, message]
+      properties:
+        ready: { type: boolean }
+        authenticated: { type: boolean }
+        admin: { type: boolean }
+        message: { type: string }
+    DeviceContext:
+      type: object
+      additionalProperties: false
+      required: [os, model, application]
+      properties:
+        os: { type: string, maxLength: 120 }
+        model: { type: string, maxLength: 120 }
+        application: { type: string, maxLength: 120 }
+        deviceType: { type: string, enum: [laptop, desktop, tablet] }
+        vendor: { type: string, enum: [dell, apple, hp, lenovo, asus, acer, microsoft, other] }
+    ConversationInput:
+      type: object
+      required: [title, context]
+      properties:
+        title: { type: string, minLength: 1, maxLength: 150 }
+        context: { $ref: "#/components/schemas/DeviceContext" }
+    Conversation:
+      type: object
+      required: [id, title, status, updatedAt, context]
+      properties:
+        id: { type: string }
+        title: { type: string }
+        status: { type: string, enum: [open, resolved, handoff] }
+        updatedAt: { type: string }
+        context: { $ref: "#/components/schemas/DeviceContext" }
+    ConversationDetail:
+      allOf:
+        - { $ref: "#/components/schemas/Conversation" }
+        - type: object
+          required: [messages, attempts]
+          properties:
+            messages:
+              type: array
+              items: { $ref: "#/components/schemas/Message" }
+            attempts:
+              type: array
+              items: { $ref: "#/components/schemas/Attempt" }
+    Message:
+      type: object
+      required: [id, role, text, createdAt, citations]
+      properties:
+        id: { type: string }
+        role: { type: string, enum: [user, assistant] }
+        text: { type: string }
+        createdAt: { type: string }
+        step: { type: string }
+        explanation: { type: string }
+        navigation: { type: string }
+        expectedResult: { type: string }
+        kind: { type: string, enum: [clarification, guidance, handoff] }
+        triage: { $ref: "#/components/schemas/SupportTriage" }
+        citations:
+          type: array
+          items: { $ref: "#/components/schemas/Citation" }
+    Citation:
+      type: object
+      required: [id, title, excerpt]
+      properties:
+        id: { type: string }
+        title: { type: string }
+        url: { type: string }
+        excerpt: { type: string }
+    SupportTriage:
+      type: object
+      required: [originalIssue, topic, symptom]
+      properties:
+        originalIssue: { type: string }
+        topic: { type: string, enum: [wifi, other] }
+        symptom: { type: string, enum: [unknown, connectedNoInternet, disconnects, cannotConnect] }
+        pending: { type: string, enum: [os, wifiSymptom] }
+    Attempt:
+      type: object
+      required: [messageId, step, outcome]
+      properties:
+        messageId: { type: string }
+        step: { type: string }
+        outcome: { type: string, enum: [solved, failed, blocked] }
+    MessageInput:
+      type: object
+      required: [text]
+      properties:
+        text: { type: string, minLength: 1, maxLength: 4000 }
+    OutcomeInput:
+      type: object
+      required: [messageId, outcome]
+      properties:
+        messageId: { type: string }
+        outcome: { type: string, enum: [solved, failed, blocked] }
+    Handoff:
+      type: object
+      required: [summary]
+      properties:
+        summary: { type: string }
+    AdminStatus:
+      type: object
+      required: [checks, documents, chunks, validation]
+      properties:
+        checks:
+          type: array
+          items: { $ref: "#/components/schemas/ConfigCheck" }
+        documents: { type: integer }
+        chunks: { type: integer }
+        validation: { $ref: "#/components/schemas/SourceValidation" }
+    SourceValidation:
+      type: object
+      required: [stage, message, records, queryPassed, followupPassed]
+      properties:
+        stage: { type: string, enum: [pending, providers, syncing, synced, ready, failed] }
+        message: { type: string }
+        records: { type: integer }
+        expected: { type: integer }
+        checkedAt: { type: string, nullable: true }
+        queryPassed: { type: boolean }
+        followupPassed: { type: boolean }
+        firstStep: { type: string }
+        followupStep: { type: string }
+        testConversationId: { type: string }
+    SourceValidationInput:
+      type: object
+      required: [action]
+      properties:
+        action: { type: string, enum: [providers, sync, regression] }
+    ConfigCheck:
+      type: object
+      required: [name, configured]
+      properties:
+        name: { type: string }
+        configured: { type: boolean }
+    KnowledgeInput:
+      type: object
+      required: [title, content]
+      properties:
+        title: { type: string, minLength: 1, maxLength: 200 }
+        sourceUrl: { type: string, maxLength: 2000 }
+        content: { type: string, minLength: 10, maxLength: 500000 }
+    IngestResult:
+      type: object
+      required: [documentId, chunks]
+      properties:
+        documentId: { type: string }
+        chunks: { type: integer }
