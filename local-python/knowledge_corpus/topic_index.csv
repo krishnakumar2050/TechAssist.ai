@@ -1,0 +1,34 @@
+id,title,category,subcategory,platform,risk_level
+TA-LAP-001,Laptop fails POST after a RAM upgrade,hardware,memory,Dell laptops,standard
+TA-LAP-002,Laptop fails POST after physical damage,hardware,motherboard,Dell laptops,standard
+TA-LAP-003,Laptop overheats and shuts down,hardware,cooling,Dell laptops,standard
+TA-LAP-004,Laptop fan runs loudly all the time,hardware,cooling,Dell laptops with Windows,standard
+TA-LAP-005,Laptop chassis or trackpad is bulging,hardware,battery_safety,Dell laptops,high
+TA-LAP-006,Windows cannot connect to Wi-Fi,software,networking,Windows 11,standard
+TA-LAP-007,Windows shows Wi-Fi connected but no internet,software,networking,Windows 11,standard
+TA-LAP-008,Windows camera works in one app only,software,camera_permissions,Windows 11,standard
+TA-LAP-009,Windows camera is black or missing,hardware,camera,Windows 11,standard
+TA-LAP-010,Windows stop error after a new peripheral,software,crashes,Windows 11,standard
+TA-LAP-011,Windows repeatedly crashes during startup,software,crashes,Windows 11,standard
+TA-LAP-012,Windows cannot boot into the desktop,software,os_recovery,Windows 11,high
+TA-LAP-013,Windows unstable after a recent change,software,os_recovery,Windows 11,high
+TA-LAP-014,Bluetooth device will not pair,software,bluetooth,Windows 11,standard
+TA-LAP-015,Bluetooth headphones connected without sound,software,bluetooth_audio,Windows 11,standard
+TA-LAP-016,Bluetooth audio disconnects repeatedly,software,bluetooth_audio,Windows 11,standard
+TA-LAP-017,Windows update fails with a driver-related error,software,updates,Windows 11,standard
+TA-LAP-018,Windows update reports configuration or file errors,software,updates,Windows 11,standard
+TA-LAP-019,Windows update cannot proceed because storage is full,software,storage,Windows 11,standard
+TA-LAP-020,Windows malware returns after removal,software,security,Windows 11,high
+TA-LAP-021,Microsoft Defender scan fails repeatedly,software,security,Windows 11,high
+TA-LAP-022,External keyboard or mouse fails in Windows,hardware,input_devices,Windows 11; external devices,standard
+TA-LAP-023,MacBook battery will not charge,hardware,charging,macOS; Mac laptops,standard
+TA-LAP-024,Mac shows flashing question mark at startup,software,mac_startup,macOS,standard
+TA-LAP-025,Mac delays at the startup progress bar,software,mac_startup,macOS,standard
+TA-LAP-026,Mac storage has filesystem errors,software,filesystem,macOS,high
+TA-LAP-027,Ubuntu laptop has Wi-Fi turned off,software,networking,Ubuntu desktop with NetworkManager,standard
+TA-LAP-028,Ubuntu cannot establish wireless connectivity,software,networking,Ubuntu desktop,standard
+TA-LAP-029,Windows external monitor is not detected,hardware,display,Windows 11,standard
+TA-LAP-030,External display stopped after a driver update,software,graphics_driver,Windows 11,standard
+TA-LAP-031,Windows speakers or headphones have no sound,software,audio,Windows 11,standard
+TA-LAP-032,Windows audio sounds distorted,software,audio,Windows 11,standard
+TA-LAP-033,Windows asks for a BitLocker recovery key,software,disk_encryption,Windows 11,high

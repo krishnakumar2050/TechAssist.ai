@@ -1,0 +1,202 @@
+[
+  {
+    "id": "dell_post",
+    "publisher": "Dell",
+    "title": "Laptop no POST troubleshooting",
+    "url": "https://www.dell.com/support/kbdoc/en-us/000141584/how-to-troubleshoot-a-no-post-issue-on-a-dell-notebook-pc",
+    "evidence_access": "page_read",
+    "checked_on": "2026-11-03",
+    "license": "Third-party terms apply; no redistribution license verified",
+    "use": "Linked evidence for original concise summaries; not full-page copies"
+  },
+  {
+    "id": "dell_heat",
+    "publisher": "Dell",
+    "title": "Laptop overheating and shutdown issues",
+    "url": "https://www.dell.com/support/kbdoc/en-us/000130867/how-to-troubleshoot-a-overheating-shutdown-or-thermal-issue-on-a-dell-pc",
+    "evidence_access": "search_excerpt",
+    "checked_on": "2026-11-03",
+    "license": "Third-party terms apply; no redistribution license verified",
+    "use": "Linked evidence for original concise summaries; not full-page copies"
+  },
+  {
+    "id": "wifi",
+    "publisher": "Microsoft",
+    "title": "Fix Wi-Fi connection issues in Windows",
+    "url": "https://support.microsoft.com/en-us/windows/experience/connectivity-networking/fix-wi-fi-connection-issues-in-windows",
+    "evidence_access": "search_excerpt",
+    "checked_on": "2026-11-03",
+    "license": "Third-party terms apply; no redistribution license verified",
+    "use": "Linked evidence for original concise summaries; not full-page copies"
+  },
+  {
+    "id": "camera",
+    "publisher": "Microsoft",
+    "title": "Camera does not work in Windows",
+    "url": "https://support.microsoft.com/en-us/windows/hardware/camera/camera-doesn-t-work-in-windows",
+    "evidence_access": "search_excerpt",
+    "checked_on": "2026-11-03",
+    "license": "Third-party terms apply; no redistribution license verified",
+    "use": "Linked evidence for original concise summaries; not full-page copies"
+  },
+  {
+    "id": "recovery",
+    "publisher": "Microsoft",
+    "title": "Recovery options in Windows",
+    "url": "https://support.microsoft.com/en-us/windows/experience/backup-recovery/recovery-options-in-windows",
+    "evidence_access": "search_excerpt; direct fetch failed",
+    "checked_on": "2026-11-03",
+    "license": "Third-party terms apply; no redistribution license verified",
+    "use": "Linked evidence for original concise summaries; not full-page copies"
+  },
+  {
+    "id": "stop",
+    "publisher": "Microsoft",
+    "title": "Unexpected restarts and stop code errors",
+    "url": "https://support.microsoft.com/en-us/windows/experience/performance-optimization/troubleshooting-windows-unexpected-restarts-and-stop-code-errors",
+    "evidence_access": "page_read",
+    "checked_on": "2026-11-03",
+    "license": "Third-party terms apply; no redistribution license verified",
+    "use": "Linked evidence for original concise summaries; not full-page copies"
+  },
+  {
+    "id": "bt",
+    "publisher": "Microsoft",
+    "title": "Fix Bluetooth problems in Windows",
+    "url": "https://support.microsoft.com/en-us/windows/hardware/bluetooth/fix-bluetooth-problems-in-windows",
+    "evidence_access": "search_excerpt",
+    "checked_on": "2026-11-03",
+    "license": "Third-party terms apply; no redistribution license verified",
+    "use": "Linked evidence for original concise summaries; not full-page copies"
+  },
+  {
+    "id": "bt_audio",
+    "publisher": "Microsoft",
+    "title": "Bluetooth connected but no sound",
+    "url": "https://support.microsoft.com/en-us/windows/hardware/bluetooth/fix-bluetooth-connected-but-no-sound-issue-on-windows",
+    "evidence_access": "search_excerpt",
+    "checked_on": "2026-11-03",
+    "license": "Third-party terms apply; no redistribution license verified",
+    "use": "Linked evidence for original concise summaries; not full-page copies"
+  },
+  {
+    "id": "update",
+    "publisher": "Microsoft",
+    "title": "Troubleshoot problems updating Windows",
+    "url": "https://support.microsoft.com/en-US/Windows/Deployment/Updates-Lifecycle/troubleshoot-problems-updating-windows",
+    "evidence_access": "search_excerpt",
+    "checked_on": "2026-11-03",
+    "license": "Third-party terms apply; no redistribution license verified",
+    "use": "Linked evidence for original concise summaries; not full-page copies"
+  },
+  {
+    "id": "space",
+    "publisher": "Microsoft",
+    "title": "Free up space for Windows updates",
+    "url": "https://support.microsoft.com/en-gb/windows/deployment/updates-lifecycle/free-up-space-for-windows-updates",
+    "evidence_access": "search_excerpt",
+    "checked_on": "2026-11-03",
+    "license": "Third-party terms apply; no redistribution license verified",
+    "use": "Linked evidence for original concise summaries; not full-page copies"
+  },
+  {
+    "id": "malware",
+    "publisher": "Microsoft",
+    "title": "Detecting and removing malware troubleshooting",
+    "url": "https://support.microsoft.com/en-us/defender/troubleshoot-problems-with-detecting-and-removing-malware",
+    "evidence_access": "page_read",
+    "checked_on": "2026-11-03",
+    "license": "Third-party terms apply; no redistribution license verified",
+    "use": "Linked evidence for original concise summaries; not full-page copies"
+  },
+  {
+    "id": "input",
+    "publisher": "Microsoft",
+    "title": "Mouse and keyboard problems in Windows",
+    "url": "https://support.microsoft.com/en-us/windows/hardware/input-devices/mouse-and-keyboard-problems-in-windows",
+    "evidence_access": "page_read",
+    "checked_on": "2026-11-03",
+    "license": "Third-party terms apply; no redistribution license verified",
+    "use": "Linked evidence for original concise summaries; not full-page copies"
+  },
+  {
+    "id": "mac_charge",
+    "publisher": "Apple",
+    "title": "If your Mac battery will not charge",
+    "url": "https://support.apple.com/en-gb/guide/mac-help/-mh29198/mac",
+    "evidence_access": "page_fetched; search_excerpt used",
+    "checked_on": "2026-11-03",
+    "license": "Third-party terms apply; no redistribution license verified",
+    "use": "Linked evidence for original concise summaries; not full-page copies"
+  },
+  {
+    "id": "mac_boot",
+    "publisher": "Apple",
+    "title": "If your Mac stops or delays while starting up",
+    "url": "https://support.apple.com/guide/mac-help/if-your-mac-stops-or-delays-while-starting-up-mchlp2580/mac",
+    "evidence_access": "search_excerpt",
+    "checked_on": "2026-11-03",
+    "license": "Third-party terms apply; no redistribution license verified",
+    "use": "Linked evidence for original concise summaries; not full-page copies"
+  },
+  {
+    "id": "mac_disk",
+    "publisher": "Apple",
+    "title": "Repair storage with Disk Utility",
+    "url": "https://support.apple.com/en-lamr/102611",
+    "evidence_access": "search_excerpt; direct fetch rate limited",
+    "checked_on": "2026-11-03",
+    "license": "Third-party terms apply; no redistribution license verified",
+    "use": "Linked evidence for original concise summaries; not full-page copies"
+  },
+  {
+    "id": "ubuntu_wifi",
+    "publisher": "Ubuntu",
+    "title": "Wireless network troubleshooter",
+    "url": "https://help.ubuntu.com/stable/ubuntu-help/net-wireless-troubleshooting.html.en",
+    "evidence_access": "search_excerpt",
+    "checked_on": "2026-11-03",
+    "license": "Third-party terms apply; no redistribution license verified",
+    "use": "Linked evidence for original concise summaries; not full-page copies"
+  },
+  {
+    "id": "ubuntu_initial",
+    "publisher": "Ubuntu",
+    "title": "Wireless initial connection check",
+    "url": "https://help.ubuntu.com/stable/ubuntu-help/net-wireless-troubleshooting-initial-check.html.te",
+    "evidence_access": "search_excerpt",
+    "checked_on": "2026-11-03",
+    "license": "Third-party terms apply; no redistribution license verified",
+    "use": "Linked evidence for original concise summaries; not full-page copies"
+  },
+  {
+    "id": "monitor",
+    "publisher": "Microsoft",
+    "title": "Troubleshoot external monitor connections",
+    "url": "https://support.microsoft.com/en-gb/windows/hardware/display-graphics/troubleshoot-external-monitor-connections-in-windows",
+    "evidence_access": "search_excerpt",
+    "checked_on": "2026-11-03",
+    "license": "Third-party terms apply; no redistribution license verified",
+    "use": "Linked evidence for original concise summaries; not full-page copies"
+  },
+  {
+    "id": "audio",
+    "publisher": "Microsoft",
+    "title": "Fix sound or audio problems in Windows",
+    "url": "https://support.microsoft.com/en-us/windows/hardware/audio/fix-sound-or-audio-problems-in-windows",
+    "evidence_access": "page_read",
+    "checked_on": "2026-11-03",
+    "license": "Third-party terms apply; no redistribution license verified",
+    "use": "Linked evidence for original concise summaries; not full-page copies"
+  },
+  {
+    "id": "bitlocker",
+    "publisher": "Microsoft",
+    "title": "Find your BitLocker recovery key",
+    "url": "https://support.microsoft.com/en-us/windows/security/encryption/find-your-bitlocker-recovery-key",
+    "evidence_access": "search_excerpt",
+    "checked_on": "2026-11-03",
+    "license": "Third-party terms apply; no redistribution license verified",
+    "use": "Linked evidence for original concise summaries; not full-page copies"
+  }
+]

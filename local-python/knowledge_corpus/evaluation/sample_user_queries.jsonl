@@ -1,0 +1,7 @@
+{"id":"S-001","question":"My notebook gets very hot during work and then powers off by itself. What should I check?","expected_document_ids":["TA-LAP-003"]}
+{"id":"S-002","question":"The Windows camera preview works, but nobody can see me in a video meeting.","expected_document_ids":["TA-LAP-008"]}
+{"id":"S-003","question":"My wireless headphones say connected to Windows, but I cannot hear any audio.","expected_document_ids":["TA-LAP-015"]}
+{"id":"S-004","question":"Windows Update keeps failing with error 0xC1900101 on my laptop.","expected_document_ids":["TA-LAP-017"]}
+{"id":"S-005","question":"When I turn on my MacBook, a folder with a question mark flashes on screen.","expected_document_ids":["TA-LAP-024"]}
+{"id":"S-006","question":"My touchpad is being pushed upward and the bottom of the laptop is bulging.","expected_document_ids":["TA-LAP-005"]}
+{"id":"S-007","question":"How do I connect my wireless printer and clear a stuck print queue?","expected_document_ids":[],"note":"Outside corpus coverage. Retrieval can still return nearest chunks; inspect relevance rather than treating them as a supported answer."}

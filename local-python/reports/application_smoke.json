@@ -1,0 +1,14 @@
+{
+  "status": "passed",
+  "response_mode": "guided",
+  "conversation_id": "eece4cf3-2a40-4739-a4b1-8e4e4ef6afa5",
+  "checks": [
+    "frontend HTTP 200",
+    "live Pinecone retrieval and reranking",
+    "source-backed step",
+    "failed step leads to different step",
+    "resolved outcome",
+    "PostgreSQL conversation persistence",
+    "cross-session ownership isolation"
+  ]
+}

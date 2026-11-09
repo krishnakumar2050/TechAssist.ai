@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "techassist-rag"
+version = "0.1.0"
+description = "Laptop troubleshooting RAG with recursive splitting, encrypted credentials and Pinecone"
+requires-python = ">=3.10"
+dependencies = [
+  "openai>=2,<3",
+  "pinecone>=10.1,<11",
+  "python-dotenv>=1,<2",
+  "tiktoken>=0.12,<1",
+  "langchain-text-splitters>=1,<2",
+  "cryptography>=46,<51",
+  "keyring>=25,<26",
+  "fastapi>=0.115,<1",
+  "uvicorn>=0.34,<1",
+  "sqlalchemy>=2.0,<2.1",
+  "psycopg[binary]>=3.2,<4",
+  "authlib>=1.4,<2",
+  "itsdangerous>=2,<3",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<10"]
+
+[project.scripts]
+techassist = "techassist_rag.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

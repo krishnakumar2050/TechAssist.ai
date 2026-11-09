@@ -1,0 +1,8 @@
+{
+  "status": "passed",
+  "model": "qwen2.5:1.5b",
+  "action": "choose_step",
+  "source_id": "camera-1",
+  "step_number": 1,
+  "summary": "Verify camera access for Microsoft Teams application."
+}

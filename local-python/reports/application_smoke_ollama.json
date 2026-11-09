@@ -1,0 +1,14 @@
+{
+  "status": "passed",
+  "response_mode": "ollama",
+  "conversation_id": "c8a2fd1d-38ae-4401-a344-0e1562deb0db",
+  "checks": [
+    "frontend HTTP 200",
+    "live Pinecone retrieval and reranking",
+    "source-backed step",
+    "failed step leads to different step",
+    "resolved outcome",
+    "PostgreSQL conversation persistence",
+    "cross-session ownership isolation"
+  ]
+}
